@@ -1,7 +1,7 @@
 # Analysis of the two posted reels (@meetyori)
 
 Source files (not in the repo): `Video-80949.mp4` = Episode 1, `Video-33553.mp4` = Episode 2.
-Contact sheets (1 frame per second, timestamped) are in `context/reference/`.
+Contact sheets (1 frame per second, timestamped) are in `context/reference/ep1_80949/` and `context/reference/ep2_33553/`.
 
 ## Series so far
 

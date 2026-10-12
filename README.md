@@ -7,6 +7,9 @@ Raw footage, proxies and rendered videos are **not** in this repo (too large). C
 ## Layout
 
 - `context/01-reel-analysis.md` - breakdown of the two posted reels: shots, pacing, narration style, transcripts
+- `context/02-clip-log.md` - every raw clip: what it is, usable or not
+- `context/03-ep3-edit.md` - the Episode 3 cut: shot list + voice-over draft
+- `edit/` - edit lists (EDL json) and the end card
 - `context/reference/` - 1-frame-per-second contact sheets of the posted reels
 - `context/clips/` - contact sheets of the raw clips for the new reel
 - `scripts/` - ffmpeg / Python helpers (proxies, contact sheets, transcription, audio stats, render)
