@@ -95,13 +95,13 @@
     },
     {
       "clip": "022556",
-      "in": 14.0,
-      "dur": 3.6,
-      "note": "Yori standing in front of monitor (punched in 1.6x: keeps the ChatGPT sidebar chat titles out of frame)",
+      "in": 15.7,
+      "dur": 3.0,
+      "note": "Yori standing in front of the monitor (punched in 2.4x on the phone: keeps the ChatGPT sidebar chat titles out of frame)",
       "crop": [
-        0.68,
-        0.5,
-        1.6
+        0.778,
+        0.543,
+        2.4
       ]
     },
     {

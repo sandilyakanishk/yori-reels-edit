@@ -1,7 +1,8 @@
 """Contact sheets of the proxies: one row of 8 frames per clip, 3 clips per sheet.
 Usage: python scripts/contact_sheets.py   (run from project root, after make_proxies.sh)"""
 import glob, os, subprocess, json
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+REDACT = {"031036", "031608", "031803"}   # API key / personal search suggestions on screen: blurred in the sheets
 N, W, H = 8, 160, 284
 os.makedirs("work/tmp", exist_ok=True); os.makedirs("context/clips", exist_ok=True)
 font = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 15)
@@ -15,7 +16,9 @@ for p in sorted(glob.glob("work/proxies/Flow_VID_*.mp4")):
     for i in range(N):
         t = dur*(i+0.5)/N; f = f"work/tmp/{cid}_{i}.jpg"
         subprocess.run(["ffmpeg","-v","error","-y","-noautorotate","-ss",f"{t:.2f}","-i",p,"-frames:v","1","-vf",f"scale={W}:{H}",f])
-        row.paste(Image.open(f), (i*W, 22)); d.text((i*W+4, 24), f"{t:.1f}", fill="yellow", font=font, stroke_width=2, stroke_fill="black")
+        im = Image.open(f)
+        if cid in REDACT: im = im.filter(ImageFilter.GaussianBlur(9))
+        row.paste(im, (i*W, 22)); d.text((i*W+4, 24), f"{t:.1f}", fill="yellow", font=font, stroke_width=2, stroke_fill="black")
     rows.append(row)
 for k in range(0, len(rows), 3):
     grp = rows[k:k+3]; sheet = Image.new("RGB", (N*W, (H+22)*len(grp)))

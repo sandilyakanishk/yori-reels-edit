@@ -32,6 +32,6 @@ if "endcard" in edl and os.path.exists("edit/endcard.png"):
 lst = f"{tmp}/list.txt"; open(lst,"w").write("".join(f"file '{os.path.abspath(p).replace(os.sep,'/')}'\n" for p in parts))
 final = f"output/{edl['name']}_{'draft' if proxy else 'final'}.mp4"
 subprocess.run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",lst,"-f","lavfi","-i","anullsrc=r=48000:cl=stereo",
-                "-c:v","libx264","-preset","slow" if not proxy else "veryfast","-crf","17" if not proxy else "22","-pix_fmt","yuv420p",
+                "-c:v","libx264","-preset","slow" if not proxy else "veryfast","-crf","20" if not proxy else "22","-pix_fmt","yuv420p",
                 "-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709","-c:a","aac","-b:a","128k","-shortest","-movflags","+faststart",final], check=True)
 print("wrote", final)

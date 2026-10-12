@@ -52,4 +52,4 @@ Verdict: **USED** = in the Episode 3 cut, **good** = usable spare, **weak** = us
 
 - `031036`: the NVIDIA API key dialog is on screen. Never use the first 14 s. If that key is still active, regenerate it.
 - `031608`, `031803` (0-16 s): Google's suggestion dropdown shows personal search history.
-- `022556`: the ChatGPT sidebar with chat titles is in frame on the left. The cut punches in 1.6x on the phone so the sidebar is out of frame.
+- `022556`: the ChatGPT sidebar with chat titles is in frame on the left. The cut uses 15.7-18.7 s punched in 2.4x on the phone so the sidebar is out of frame. Do not use the uncropped shot.
