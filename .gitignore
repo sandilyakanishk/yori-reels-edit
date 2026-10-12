@@ -1,0 +1,9 @@
+# raw footage, proxies and renders stay local (too big for GitHub) - copy them separately
+*.mov
+*.mp4
+*.wav
+work/proxies/
+work/tmp/
+output/
+venv/
+__pycache__/
